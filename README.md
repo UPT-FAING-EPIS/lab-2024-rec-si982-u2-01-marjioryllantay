@@ -340,6 +340,7 @@ dotnet aspnet-codegenerator identity --useDefaultUI
 dotnet ef migrations add CreateIdentitySchema
 dotnet ef database update
 ```
+![image](https://github.com/user-attachments/assets/4fc8c9b3-dd90-47a2-90de-cf7563bd4a79)
 
 5. En el Visual Studio Code, en la carpeta src/Areas/Domain, crear el archivo UrlMapping.cs con el siguiente contenido:
 ```CSharp
@@ -443,6 +444,7 @@ app.Run();
 dotnet ef migrations add DomainModel --context ShortenContext
 dotnet ef database update --context ShortenContext
 ```
+![image](https://github.com/user-attachments/assets/fd5b6462-563b-472f-a7c7-a91654d1e950)
 
 9. En el terminal, ejecutar el siguiente comando para crear nu nuevo controlador y sus vistas asociadas.
 ```Powershell
@@ -452,6 +454,7 @@ dotnet aspnet-codegenerator razorpage Edit Edit -m UrlMapping -dc ShortenContext
 dotnet aspnet-codegenerator razorpage Delete Delete -m UrlMapping -dc ShortenContext -outDir Pages/UrlMapping -udl
 dotnet aspnet-codegenerator razorpage Details Details -m UrlMapping -dc ShortenContext -outDir Pages/UrlMapping -udl
 ```
+![image](https://github.com/user-attachments/assets/72d6ca62-5d79-4fdf-9992-3647e9ec50bf)
 
 10. En el Visual Studio Code, en la carpeta src, modificar el archivo _Layout.cshtml, Adicionando la siguiente opciòn dentro del navegador:
 ```CSharp
