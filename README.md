@@ -549,6 +549,10 @@ ENTRYPOINT ["dotnet", "Shorten.dll"]
 ```Powershell
 az webapp deployment list-publishing-profiles --name upt-awa-XXX --resource-group upt-arg-XXX --xml
 ```
+![image](https://github.com/user-attachments/assets/81065744-9626-4a6e-bda2-8dc7fb4a809c)
+![image](https://github.com/user-attachments/assets/18122d2a-5790-45b6-8c7b-7e6cc7834ec9)
+
+
 > Donde XXX; es el numero de identicación de la Aplicación Web creada en la primera sección
 
 2. Abrir un navegador de internet y dirigirse a su repositorio en Github, en la sección *Settings*, buscar la opción *Secrets and Variables* y seleccionar la opción *Actions*. Dentro de esta hacer click en el botón *New Repository Secret*. En el navegador, dentro de la ventana *New Secret*, colocar como nombre AZURE_WEBAPP_PUBLISH_PROFILE y como valor el obtenido en el paso anterior.
@@ -610,13 +614,17 @@ jobs:
 4. En el Visual Studio Code o en el Terminal, confirmar los cambios con sistema de controlde versiones (git add ... git commit...) y luego subir esos cambios al repositorio remoto (git push ...).
    
 5. En el Navegador de internet, dirigirse al repositorio de Github y revisar la seccion Actions, verificar que se esta ejecutando correctamente el Workflow.
+![image](https://github.com/user-attachments/assets/b712fdbf-c770-47df-bbda-e82886b08e03)
 
 6. En el Navegador de internet, una vez finalizada la automatización, ingresar al sitio creado y navegar por el (https://upt-awa-XXX.azurewebsites.net).
+![image](https://github.com/user-attachments/assets/850a407c-b075-4d4d-b6fe-2b7531aaead3)
 
 7. En el Terminal, revisar las metricas de navegacion con el siguiente comando.
 ```Powershell
 az monitor metrics list --resource "/subscriptions/XXXXXXXXXXXXXXX/resourceGroups/upt-arg-XXX/providers/Microsoft.Web/sites/upt-awa-XXXX" --metric "Requests" --start-time 2025-01-07T18:00:00Z --end-time 2025-01-07T23:00:00Z --output table
 ```
+![image](https://github.com/user-attachments/assets/a0cb5b55-3000-47fe-897d-9b8349ed334b)
+
 > Reemplazar los valores: 1. ID de suscripcion de Azure, 2. ID de creaciòn de infra y 3. El rango de fechas de uso de la aplicación.
 
 7. En el Terminal, ejecutar el siguiente comando para obtener la plantilla de los recursos creados de azure en el grupo de recursos UPT.
@@ -624,7 +632,10 @@ az monitor metrics list --resource "/subscriptions/XXXXXXXXXXXXXXX/resourceGroup
 az group export -n upt-arg-XXX > lab_01.json
 ```
 
+![image](https://github.com/user-attachments/assets/070e3270-5a5e-4640-ba7f-418c3b1678e2)
+
 8. En el Visual Studio Code, instalar la extensión *ARM Template Viewer*, abrir el archivo lab_02.json y hacer click en el icono de previsualizar ARM.
+![image](https://github.com/user-attachments/assets/da03f1d4-952b-475c-9384-745e0c08caa5)
 
 
 ## ACTIVIDADES ENCARGADAS
